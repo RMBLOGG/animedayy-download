@@ -4,7 +4,7 @@ import requests
 app = Flask(__name__)
 
 # Configuration
-API_BASE = "https://dayy.pythonanywhere.com"
+API_BASE = "https://www.mediafire.com/file/gfe8fxvs2owh71h/𝘼𝙣𝙞𝙢𝙚𝘿𝙖𝙮𝙮.apk/file"
 
 APP_CONFIG = {
     'name': '𝘼𝙣𝙞𝙢𝙚𝘿𝙖𝙮𝙮',
