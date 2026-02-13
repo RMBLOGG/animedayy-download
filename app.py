@@ -10,7 +10,7 @@ APP_CONFIG = {
     'name': '𝘼𝙣𝙞𝙢𝙚𝘿𝙖𝙮𝙮',
     'version': '2.0.0',
     'package': 'com.animestreaming.app',
-    'download_url': 'https://www.mediafire.com/file/gojzyh92je6k0cg/𝘼𝙣𝙞𝙢𝙚𝘿𝙖𝙮𝙮.apk/file',  # Ganti dengan link APK Anda
+    'download_url': 'https://www.mediafire.com/file/s75epqwe9pebllr/𝘼𝙣𝙞𝙢𝙚𝘿𝙖𝙮𝙮.apk/file',  # Ganti dengan link APK Anda
     'file_size': '10 MB',
     'min_android': '5.0',
     'api_endpoints': {
