@@ -400,30 +400,6 @@
             <span class="app-version">v{{ config.version }}</span>
         </div>
 
-        <!-- Download Section -->
-        <div class="download-section">
-            <a href="{{ config.download_url }}" class="download-btn" id="downloadBtn">
-                <i class="fas fa-download"></i>
-                <span>Download APK</span>
-            </a>
-            <div class="loading" id="loadingText">Memulai download...</div>
-            
-            <div class="download-info">
-                <div class="info-item">
-                    <i class="fas fa-box"></i>
-                    <span>Ukuran: {{ config.file_size }}</span>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-mobile-alt"></i>
-                    <span>Android {{ config.min_android }}+</span>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-sync-alt"></i>
-                    <span>Update Terbaru</span>
-                </div>
-            </div>
-        </div>
-
         <!-- App Stats -->
         <div class="specs-section">
             <h2 class="section-title"><i class="fas fa-chart-bar"></i> Statistik Aplikasi</h2>
@@ -486,6 +462,30 @@
                 <div class="feature-item">
                     <i class="fas fa-bolt feature-icon"></i>
                     <span class="feature-text">Loading Cepat</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Download Section -->
+        <div class="download-section">
+            <a href="{{ config.download_url }}" class="download-btn" id="downloadBtn">
+                <i class="fas fa-download"></i>
+                <span>Download APK</span>
+            </a>
+            <div class="loading" id="loadingText">Memulai download...</div>
+            
+            <div class="download-info">
+                <div class="info-item">
+                    <i class="fas fa-box"></i>
+                    <span>Ukuran: {{ config.file_size }}</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Android {{ config.min_android }}+</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Update Terbaru</span>
                 </div>
             </div>
         </div>
