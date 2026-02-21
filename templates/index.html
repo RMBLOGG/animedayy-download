@@ -114,6 +114,138 @@
             font-weight: 600;
         }
 
+        /* ===== SCREENSHOT SLIDER SECTION ===== */
+        .screenshots-section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 35px;
+            text-align: center;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .section-title i {
+            color: #3b82f6;
+        }
+
+        .slider-container {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .slider-wrapper {
+            position: relative;
+            height: 650px;
+            overflow: hidden;
+            background: transparent;
+            cursor: grab;
+            user-select: none;
+        }
+
+        .slider-wrapper:active {
+            cursor: grabbing;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+        }
+
+        .slide {
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .slide img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Navigation Arrows */
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(59, 130, 246, 0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-nav:hover {
+            background: rgba(59, 130, 246, 1);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.5);
+        }
+
+        .slider-nav.prev {
+            left: 20px;
+        }
+
+        .slider-nav.next {
+            right: 20px;
+        }
+
+        /* Dots Indicator */
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(156, 163, 175, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .dot:hover {
+            background: rgba(156, 163, 175, 0.6);
+            transform: scale(1.2);
+        }
+
+        .dot.active {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            width: 35px;
+            border-radius: 10px;
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+        }
+
         /* Download Section */
         .download-section {
             background: rgba(26, 26, 46, 0.6);
@@ -171,14 +303,6 @@
         /* Specs Grid */
         .specs-section {
             margin-bottom: 40px;
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 25px;
-            text-align: center;
-            color: #ffffff;
         }
 
         .specs-grid {
@@ -251,39 +375,40 @@
         }
 
         .feature-item {
-            background: rgba(26, 26, 46, 0.4);
-            border: 1px solid rgba(59, 130, 246, 0.15);
-            border-radius: 12px;
-            padding: 20px;
             display: flex;
             align-items: center;
             gap: 15px;
+            padding: 20px;
+            background: rgba(26, 26, 46, 0.4);
+            border: 1px solid rgba(59, 130, 246, 0.15);
+            border-radius: 12px;
             transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
 
         .feature-item:hover {
             border-color: rgba(59, 130, 246, 0.4);
-            transform: translateX(5px);
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.2);
         }
 
         .feature-icon {
-            font-size: 1.8rem;
-            min-width: 40px;
+            font-size: 1.5rem;
             color: #3b82f6;
+            flex-shrink: 0;
         }
 
         .feature-text {
             font-size: 1rem;
-            color: #d1d5db;
-            line-height: 1.5;
+            color: #e5e7eb;
+            font-weight: 500;
         }
 
         /* Footer */
         .footer {
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 0 20px;
             border-top: 1px solid rgba(59, 130, 246, 0.1);
-            color: #6b7280;
             margin-top: 60px;
         }
 
@@ -291,25 +416,25 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
         }
 
         .social-link {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 10px;
-            padding: 12px 24px;
+            padding: 12px 30px;
             background: rgba(26, 26, 46, 0.6);
             border: 1px solid rgba(59, 130, 246, 0.2);
             border-radius: 10px;
             color: #ffffff;
             text-decoration: none;
             transition: all 0.3s ease;
-            font-size: 0.95rem;
+            backdrop-filter: blur(10px);
         }
 
         .social-link:hover {
-            border-color: rgba(59, 130, 246, 0.5);
             transform: translateY(-3px);
             box-shadow: 0 5px 20px rgba(59, 130, 246, 0.3);
         }
@@ -342,6 +467,24 @@
             .download-btn {
                 padding: 18px 40px;
                 font-size: 1.2rem;
+            }
+
+            .slider-wrapper {
+                height: 500px;
+            }
+
+            .slider-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .slider-nav.prev {
+                left: 10px;
+            }
+
+            .slider-nav.next {
+                right: 10px;
             }
 
             .download-info {
@@ -382,6 +525,18 @@
         .loading.active {
             display: block;
         }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -398,6 +553,35 @@
             </div>
             <h1 class="app-title">{{ config.name }}</h1>
             <span class="app-version">v{{ config.version }}</span>
+        </div>
+
+        <!-- Screenshot Slider Section -->
+        <div class="screenshots-section">
+            <h2 class="section-title">
+                <i class="fas fa-images"></i>
+                <span>Preview Aplikasi</span>
+            </h2>
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <button class="slider-nav prev" onclick="changeSlide(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="slides" id="slides">
+                        <div class="slide"><img src="{{ url_for('static', filename='1.jpg') }}" alt="Screenshot 1"></div>
+                        <div class="slide"><img src="{{ url_for('static', filename='2.jpg') }}" alt="Screenshot 2"></div>
+                        <div class="slide"><img src="{{ url_for('static', filename='3.jpg') }}" alt="Screenshot 3"></div>
+                        <div class="slide"><img src="{{ url_for('static', filename='4.jpg') }}" alt="Screenshot 4"></div>
+                        <div class="slide"><img src="{{ url_for('static', filename='5.jpg') }}" alt="Screenshot 5"></div>
+                        <div class="slide"><img src="{{ url_for('static', filename='6.jpg') }}" alt="Screenshot 6"></div>
+                        <div class="slide"><img src="{{ url_for('static', filename='7.jpg') }}" alt="Screenshot 7"></div>
+                        <div class="slide"><img src="{{ url_for('static', filename='8.jpg') }}" alt="Screenshot 8"></div>
+                    </div>
+                    <button class="slider-nav next" onclick="changeSlide(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="slider-dots" id="sliderDots"></div>
+            </div>
         </div>
 
         <!-- App Stats -->
@@ -510,6 +694,151 @@
     </div>
 
     <script>
+        // Slider functionality
+        let currentSlide = 0;
+        const slides = document.getElementById('slides');
+        const totalSlides = slides.children.length;
+
+        // Touch/Swipe variables
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let isDragging = false;
+
+        // Create dots
+        const dotsContainer = document.getElementById('sliderDots');
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot' + (i === 0 ? ' active' : '');
+            dot.onclick = () => goToSlide(i);
+            dotsContainer.appendChild(dot);
+        }
+
+        function updateSlider() {
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            const dots = dotsContainer.children;
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.toggle('active', i === currentSlide);
+            }
+        }
+
+        function changeSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        // Touch/Swipe Event Handlers
+        const sliderWrapper = document.querySelector('.slider-wrapper');
+
+        sliderWrapper.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            isDragging = true;
+        }, { passive: true });
+
+        sliderWrapper.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            touchEndX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        sliderWrapper.addEventListener('touchend', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            handleSwipe();
+        });
+
+        // Mouse drag support (desktop)
+        sliderWrapper.addEventListener('mousedown', (e) => {
+            touchStartX = e.screenX;
+            isDragging = true;
+            sliderWrapper.style.cursor = 'grabbing';
+        });
+
+        sliderWrapper.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            touchEndX = e.screenX;
+        });
+
+        sliderWrapper.addEventListener('mouseup', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            sliderWrapper.style.cursor = 'grab';
+            handleSwipe();
+        });
+
+        sliderWrapper.addEventListener('mouseleave', () => {
+            if (isDragging) {
+                isDragging = false;
+                sliderWrapper.style.cursor = 'grab';
+            }
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50; // Minimum swipe distance in pixels
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left - next slide
+                    changeSlide(1);
+                } else {
+                    // Swipe right - previous slide
+                    changeSlide(-1);
+                }
+            }
+
+            touchStartX = 0;
+            touchEndX = 0;
+        }
+
+        // Auto slide every 5 seconds
+        let autoSlideInterval = setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+
+        // Pause auto-slide when user interacts
+        sliderWrapper.addEventListener('touchstart', () => {
+            clearInterval(autoSlideInterval);
+        });
+
+        sliderWrapper.addEventListener('mousedown', () => {
+            clearInterval(autoSlideInterval);
+        });
+
+        // Resume auto-slide after interaction ends
+        sliderWrapper.addEventListener('touchend', () => {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(() => {
+                changeSlide(1);
+            }, 5000);
+        });
+
+        sliderWrapper.addEventListener('mouseup', () => {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(() => {
+                changeSlide(1);
+            }, 5000);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = setInterval(() => changeSlide(1), 5000);
+            }
+            if (e.key === 'ArrowRight') {
+                changeSlide(1);
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = setInterval(() => changeSlide(1), 5000);
+            }
+        });
+
         // Download button handler
         const downloadBtn = document.getElementById('downloadBtn');
         const loadingText = document.getElementById('loadingText');
@@ -531,7 +860,7 @@
                 `translate(${moveX}px, ${moveY}px)`;
         });
 
-        // Animate spec cards on scroll
+        // Animate cards on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -540,25 +869,9 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.spec-card, .feature-item').forEach(item => {
+        document.querySelectorAll('.spec-card, .feature-item, .screenshots-section').forEach(item => {
             observer.observe(item);
         });
-
-        // CSS for fade in animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes fadeInUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(30px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
